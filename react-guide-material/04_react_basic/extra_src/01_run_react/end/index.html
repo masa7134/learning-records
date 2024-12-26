@@ -14,8 +14,19 @@
     const appE1 = document.querySelector('#app');
     // Reactの動きを設定
     const root = ReactDOM.createRoot(appE1);
+    //関数コンポーネント
+    // function Example() {
+    //   return <h1>Hello component</h1>
+    // }
+    // アロー関数でも可能
+    const Example = () =>  (
+        <div>
+          <h1>Hello component</h1>
+        </div>
+      );
+    
     // Reactの実行指示
-    root.render(<h1>こんにちは</h1>);
+    root.render(<Example />);
   </script>
 </body>
 </html>
