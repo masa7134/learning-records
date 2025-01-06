@@ -6,15 +6,19 @@
 import React from "react";
 import "./Child.css";
 
-const Child = ({ color: c = 'green' }) => {
+const Child = (props) => {
 
-  // console.log(props);
+  console.log(props);
 
-  return (
-    <div className={`component ${c}`}>
-      <h3>Hello Component</h3>
-    </div>
-  );
+//   return (
+//     <div className={`component ${c}`}>
+//       <h3>Hello Component</h3>
+//       <h3>{num}</h3>
+//       <h3>{fn('Props')}</h3>
+//       <h3>{bool ? 'true' : 'false'}</h3>
+//       <h3>{obj.name + obj.age}</h3>
+//     </div>
+//   );
 };
 
 export default Child;
