@@ -1,4 +1,3 @@
-import React from "react";
 import { jsx as _jsx } from "react/jsx-runtime";
 import { jsxs as _jsxs } from "react/jsx-runtime";
 
@@ -9,9 +8,7 @@ const Example = () => {
     </h1>
   );
 
-  // console.log(   React.createElement("h1", {
-  //   className: "greeting"
-  // }, "Hello World"));
+  console.log(sample1);
 
   // React.createElement("h1", {
   //   className: "greeting"
@@ -24,6 +21,8 @@ const Example = () => {
     </div>
   );
 
+  console.log(sample2);
+
   _jsxs(
     "div", { 
       children: [
@@ -33,14 +32,14 @@ const Example = () => {
     }
   );
 
-  console.log(
-    (
-      <div>
-        <h1>Hello!</h1>
-        <h2>Good to see you.</h2>
-      </div>
-    ).props
-  );
+  // console.log(
+  //   (
+  //     <div>
+  //       <h1>Hello!</h1>
+  //       <h2>Good to see you.</h2>
+  //     </div>
+  //   ).props
+  // );
 
   return   _jsxs(
     "div", { 
