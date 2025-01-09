@@ -21,6 +21,8 @@ const Example = () => {
     </div>
   );
 
+  console.log(sample2);
+
   _jsxs(
     "div", { 
       children: [
@@ -30,15 +32,14 @@ const Example = () => {
     }
   );
 
-  console.log(
-    (
-      <div>
-        <h1>Hello!</h1>
-        <h2>Good to see you.</h2>
-      </div>
-    ).props
-  );
-  console.log(sample2);
+  // console.log(
+  //   (
+  //     <div>
+  //       <h1>Hello!</h1>
+  //       <h2>Good to see you.</h2>
+  //     </div>
+  //   ).props
+  // );
 
   return   _jsxs(
     "div", { 
