@@ -1,4 +1,3 @@
-import React from "react";
 import { jsx as _jsx } from "react/jsx-runtime";
 import { jsxs as _jsxs } from "react/jsx-runtime";
 
@@ -9,9 +8,7 @@ const Example = () => {
     </h1>
   );
 
-  // console.log(   React.createElement("h1", {
-  //   className: "greeting"
-  // }, "Hello World"));
+  console.log(sample1);
 
   // React.createElement("h1", {
   //   className: "greeting"
@@ -41,6 +38,7 @@ const Example = () => {
       </div>
     ).props
   );
+  console.log(sample2);
 
   return   _jsxs(
     "div", { 
