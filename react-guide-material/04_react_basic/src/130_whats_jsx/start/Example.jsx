@@ -1,7 +1,17 @@
 import React from "react";
+import { jsx as _jsx } from "react/jsx-runtime";
+import { jsxs as _jsxs } from "react/jsx-runtime";
 
 const Example = () => {
-  const sample1 = <h1 className="greeting">Hello World</h1>;
+  const sample1 = (
+    <h1 className="greeting">
+      Hello World
+    </h1>
+  );
+
+  // console.log(   React.createElement("h1", {
+  //   className: "greeting"
+  // }, "Hello World"));
 
   // React.createElement("h1", {
   //   className: "greeting"
@@ -14,6 +24,15 @@ const Example = () => {
     </div>
   );
 
+  _jsxs(
+    "div", { 
+      children: [
+        _jsx("h1", {children: "Hello!" }), 
+        _jsx("h2", {children: "Good to see you."})
+      ]
+    }
+  );
+
   console.log(
     (
       <div>
@@ -23,11 +42,13 @@ const Example = () => {
     ).props
   );
 
-  return React.createElement(
-    "div",
-    null,
-    React.createElement("h1", null, "Hello!"),
-    React.createElement("h2", null, "Good to see you.")
+  return   _jsxs(
+    "div", { 
+      children: [
+        _jsx("h1", {children: "Hello!" }), 
+        _jsx("h2", {children: "Good to see you."})
+      ]
+    }
   );
 };
 
