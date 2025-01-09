@@ -1,3 +1,5 @@
+// POINT JSXはあくまでJSオブジェクト！！
+
 import React from "react";
 
 const Example = () => {
@@ -14,14 +16,14 @@ const Example = () => {
     </div>
   );
 
-  console.log(
-    (
-      <div>
-        <h1>Hello!</h1>
-        <h2>Good to see you.</h2>
-      </div>
-    ).props
-  );
+//   console.log(
+//     (
+//       <div>
+//         <h1>Hello!</h1>
+//         <h2>Good to see you.</h2>
+//       </div>
+//     ).props
+//   );
 
   return React.createElement(
     "div",
