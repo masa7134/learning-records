@@ -1,8 +1,19 @@
-# React + Vite
+# 学習記録リポジトリ
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+このリポジトリは、私のプログラミング学習の進捗を記録するためのものです。学習した内容やプロジェクトの成果物、コーディングチャレンジの記録を整理して管理します。
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 📚 目的
+
+1. **学習の進捗管理**  
+   日々の学習内容を記録し、成長を見える化する。
+
+2. **復習の効率化**  
+   学習した内容を見返すことで、忘れた内容をすぐに復習できる。
+
+3. **ポートフォリオの構築**  
+   プロジェクトやコーディングチャレンジの成果物を蓄積してポートフォリオとして活用する。
+
+---
+
