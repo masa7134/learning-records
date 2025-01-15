@@ -8,7 +8,7 @@ const Example = () => {
   return (
     <>
       <input
-      type="text"
+      type="int"
       onChange={(e) => {
         // const setFn = valArry[1];
         setVal(e.target.value)
