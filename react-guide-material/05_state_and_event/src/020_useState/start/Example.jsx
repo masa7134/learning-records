@@ -9,9 +9,11 @@ const Example = () => {
     <>
       <input
       type="text"
+      // onChangeによって実行されるのはコールバック関数の中身だけで、}/> = {val}の部分は実行されない
       onChange={(e) => {
         // const setFn = valArry[1];
         setVal(e.target.value)
+        // }/> = {val}を実行するにはExample = () => {を実行しなくてはならない
       }}/> = {val}
     </>
   );
