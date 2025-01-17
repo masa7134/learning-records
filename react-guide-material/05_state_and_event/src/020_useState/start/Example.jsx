@@ -9,7 +9,7 @@ const Example = () => {
     <>
       <input
       type="text"
-      // onChangeによって実行されるのはコールバック関数の中身だけで、}/> = {val}の部分は実行されない
+      // 変化があったら変更する、※onChangeによって実行されるのはコールバック関数の中身だけで、}/> = {val}の部分は実行されない
       onChange={(e) => {
         // const setFn = valArry[1];
         setVal(e.target.value)

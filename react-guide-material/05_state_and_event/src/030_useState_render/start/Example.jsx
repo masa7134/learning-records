@@ -11,6 +11,7 @@ const Example = () => {
         onChange={(e) => {
           // 以下が入力値が変更されると実行される部分
           console.log(e.target.value);
+          // setValは変更用の関数
           setVal(e.target.value);
           displayVal = e.target.value;
         }}
