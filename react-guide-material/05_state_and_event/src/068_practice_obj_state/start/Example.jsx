@@ -6,13 +6,14 @@ const Example = () => {
   const changeItem = (e) => {
     // あたらしく作成されたobjリテラルがorderコールバック関数の戻り値となる、なおオブジェクトを返すときは()=>({})というルールがある
     setOrder(order =>({ ...order, item: e.target.value }));
-
+  };
   const countUp = () => {
     setOrder(order => ({ item: order.item, count: order.count + 1 }));
   };
   const countDown = () => {
     setOrder(order => ({ ...order, count: order.count - 1 }));
   };
+
   return (
     <div>
       <h3>練習問題</h3>
@@ -27,5 +28,6 @@ const Example = () => {
     </div>
   );
 };
+
 
 export default Example;
