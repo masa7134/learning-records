@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { requestFormReset } from "react-dom";
 
 // POINT 複数チェックボックスの実装
 const Example = () => {
@@ -9,59 +10,59 @@ const Example = () => {
   ]);
 
   const [sum, setSum] = useState(0);
-
   const handleChange = (e) => {
-    const newFruits = fruits.map((fruit) => {
+    const newFruits = fruits.map(fruit => {
       const newFruit = { ...fruit };
-      if (newFruit.label === e.target.value) {
-        newFruit.checked = !fruit.checked;
+      if(newFruit.label == e.target.value) {
+        newFruit.checked = !fruit.checked; // ！でfalseならtrue、trueならfalseにして代入している
       }
-
       return newFruit;
-    });
+    })
 
     setFruits(newFruits);
-    // forEachバージョン
+
+
+
     // let sumVal = 0;
     // newFruits.forEach(fruit => {
     //   if(fruit.checked) {
-    //     sumVal = sumVal + fruit.value;
+    //     sumVal += fruit.value;
     //   }
-    // });
+    // })
 
-    // filter + forEachバージョン
-    // let sumVal = 0;
-    // newFruits
-    //   .filter((fruit) => fruit.checked)
-    //   .forEach((fruit) => (sumVal = sumVal + fruit.value));
+        // newFruits
+        // .filter((fruit) => fruit.checked)
+        // .forEach((fruit) => (sumVal = sumVal + fruit.value))
 
-    // filter + reduceバージョン
-    let sumVal = newFruits
-      .filter((fruit) => fruit.checked)
-      .reduce((sumVal, fruit) => sumVal + fruit.value, 0);
+      // 上級者向け reduceメソッド使用（配列の要素を一つにまとめるメソッド）
+      let sumVal = newFruits
+        .filter((fruit) => fruit.checked)
+        .reduce((sumVal, fruit) => sumVal + fruit.value, 0);
+
     setSum(sumVal);
-  };
+  }
+
   return (
     <div>
-      {fruits.map((fruit) => {
+      {fruits.map(fruits => {
         return (
-          <div key={fruit.label}>
-            <input
-              id={fruit.label}
+          <div key={fruits.label}>
+            <input 
+              id={fruits.label}
               type="checkbox"
-              value={fruit.label}
-              checked={fruit.checked}
+              value={fruits.label}
+              checked={fruits.checked}
               onChange={handleChange}
             />
-            <label htmlFor={fruit.label}>
-              {fruit.label}:{fruit.value}
+            <label htmlFor={fruits.label}>
+              {fruits.label}:{fruits.value}
             </label>
           </div>
-        );
+        )
       })}
       <div>合計：{sum}</div>
     </div>
-  );
+  );   
 };
 
 export default Example;

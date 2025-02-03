@@ -1,11 +1,24 @@
+import { useState } from "react";
+
 const Example = () => {
+const [isChecked, setIsChecked] = useState(true);
+const toggleCheck = (e) => {
+  setIsChecked((prevState) => !prevState);
+};
   return (
-    <p style={{ textAlign: "center" }}>
-      startフォルダの内容が表示されます。
-      <br />
-      練習用に使ってください！
-    </p>
-  );
+    <div>
+      <label htmlFor="my-check">
+        チェック
+      </label>
+      <input
+        type="checkbox" 
+        id="my-check"  
+        checked={isChecked}
+        onChange={(e) => toggleCheck(e)}
+      />
+      <h3>{ isChecked ? "ON!" : "OFF!" }</h3>
+    </div>
+  )
 };
 
 export default Example;
