@@ -11,5 +11,5 @@
     /* 下記の記法はjavascriptなので、本cssファイルでは使用できない */
     /* background-color: isSelected ? pink : ; */
 .selected {
-    background-color: pink;
+    background-color: orange;
 }
