@@ -2,6 +2,7 @@ import { useState } from "react";
 import styled from "styled-components";
 
 console.dir(styled);
+
 const StyledButton = styled.button`
     margin: auto;
     border-radius: 9999px;
@@ -13,6 +14,24 @@ const StyledButton = styled.button`
     cursor: pointer;
     // プロップス使用時
     background: ${({isSelected}) => isSelected ? 'pink' : ''};
+
+    @media (max-width: 600px) {
+      border-radius: 0;
+    }
+`;
+
+// 上記CSSを継承し一部分だけ違うCSSを下記のように記述可能
+const OrangeButton = styled(StyledButton)`
+    background-color: orange;
+
+    &:hover {
+      color: red;
+      opacity: 0.7;
+    }
+
+    span {
+      font-size: 2em;
+    }
 `;
 
 
@@ -26,6 +45,8 @@ const Example = () => {
     <>
       <StyledButton isSelected={isSelected} onClick={clickHandler}>
         ボタン</StyledButton>
+      <OrangeButton isSelected={isSelected} onClick={clickHandler}>
+        <span>ボタン</span></OrangeButton>
       <button
         className={`btn ${isSelected ? "selected" : ""}`}
         onClick={clickHandler}
