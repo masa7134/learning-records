@@ -24,7 +24,7 @@ const Case2 = () => {
 
   return (
     <div>
-      <h3>ユースケース2</h3>
+      <h3>ユースケース2ｔ</h3>
       <video style={{ maxWidth: "100%" }} ref={videoRef}>
         <source src="./sample.mp4"></source>
       </video>
