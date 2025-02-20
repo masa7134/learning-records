@@ -11,7 +11,7 @@ const Child = ({ state, setState }) => {
   // props.state = { value: 1 }
   const increment = () => {
     setState(prev => {
-      const newState = { value: prev.value + 1 }
+      const newState = { value: prev.value + 1 } // 上書きしない！コピーを作成
       // prev.value += 1;
       return newState;
     })
