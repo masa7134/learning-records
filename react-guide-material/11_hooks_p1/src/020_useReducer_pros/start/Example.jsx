@@ -1,10 +1,10 @@
 import { useReducer, useState } from "react";
 
-// useState:状態の更新の仕方は利用側に託す。
-// useReducer:状態の更新の仕方も状態側で担当する。
+// useState:状態の更新の仕方は利用側に託す。→　（結論）簡単なときはこっち
+// useReducer:状態の更新の仕方も状態側で担当する。→　（結論）複雑でテストが必要なときはこっち
 
 // 状態と処理の分離
-// useState: コンポーネントで更新用の処理を保持
+// useState: コンポーネントで更新用の処理を保持 
 // useReducer: stateと一緒に更新用の処理を保持
 
 // 純粋性（純粋関数）
@@ -22,11 +22,11 @@ const reducer = (prev, { type, step }) => {
 
 // 不変性（Immutability）
 const Example = () => {
-  const [state, setState] = useState(0);
+  const [state, setState] = useState(0);// アプリが大きくなると純粋性を保ちにくい
   const [rstate, dispatch] = useReducer(reducer, 0);
   
-  const step = 2;
-  const countUp = () => {
+  const step = 2;// 純粋関数でなくなるポイント　スコープの外の値を参照
+  const countUp = () => {// const step = 2;// 純粋関数でなくなるポイント　スコープの外の値を参照
     setState((prev) => {
       return prev + step
     });
