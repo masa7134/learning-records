@@ -4,7 +4,7 @@ import { useReducer } from "react";
 // useReducerはuseStateの書き換えに使用
 const Example = () => {
 const [state, setState] = useState(0);
-const [rstate, dispatch] = useReducer((prev, {type, step}) => {
+const [rstate, dispatch] = useReducer((prev, {type, step}) => { // prevはstateの値が入り、typeは２８行目と３２行目の＋かーが入りstepも同様・・・
   switch(type) {
     case '+':
       return prev + step;
