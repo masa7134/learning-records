@@ -1,34 +1,31 @@
- import { createContext, useContext, useReducer } from "react";
+import { useContext, createContext, useReducer } from "react";
 
 const CounterContext = createContext();
 const CounterDispatchContext = createContext();
 
 const CounterProvider = ({ children }) => {
+
     const [state, dispatch] = useReducer((prev, { type, step }) => {
         switch (type) {
           case "+":
             return prev + step;
           case "-":
             return prev - step;
-          default:
+          default: 
             throw new Error('不明なactionです。')
         }
       }, 0);
-    return (
+    
+    return(
         <CounterContext.Provider value={state}>
             <CounterDispatchContext.Provider value={dispatch}>
                 {children}
             </CounterDispatchContext.Provider>
         </CounterContext.Provider>
-    )
-}
+    );
+};
 
-const useCounter = () => {
-    return useContext(CounterContext);
-}
-
-const useCounterDispatch = () => {
-    return useContext(CounterDispatchContext);
-}
+const useCounter = () => useContext(CounterContext);
+const useCounterDispatch = () => useContext(CounterDispatchContext);
 
 export { CounterProvider, useCounter, useCounterDispatch }
