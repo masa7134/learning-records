@@ -11,6 +11,7 @@ const Example = () => {
     }, 1000);
   }, [])
 
+
   return(
     <h3>
       <time>{time}</time>
