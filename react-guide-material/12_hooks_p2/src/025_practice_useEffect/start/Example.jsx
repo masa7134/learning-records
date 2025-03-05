@@ -1,7 +1,17 @@
+import { useEffect } from 'react';
 import { useState } from 'react';
 
 const Example = () => {
   const [checked, setChecked] = useState(false);
+
+  useEffect(() => {
+    // if(checked) {
+    //   window.alert('checked!'); 
+    // }
+
+    // 上記if文は下記のように書き換え可能
+    checked && window.alert('checked!');
+  }, [checked])
 
   return (
     <>
