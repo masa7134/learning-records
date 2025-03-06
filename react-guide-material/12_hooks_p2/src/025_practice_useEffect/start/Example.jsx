@@ -9,16 +9,12 @@ const Example = () => {
     //   window.alert('checked!'); 
     // }
 
-    // 上記if文は下記のように書き換え可能
+    // 上記if文は下記のように書き換え可能(&&の左がtrueなら右を実行、faleseならそのまま処理終了)
     checked && window.alert('checked!');
   }, [checked])
 
   return (
     <>
-      <h3>練習問題</h3>
-      <p>
-        記述を変更し、完成コードのように、checkedがtrueの場合のみalertで「checked!」と表示されるようにしてください。useEffectを用いて実装してください。
-      </p>
       <label>
         <input type={'checkbox'} value={checked} onClick={() => setChecked((checked) => !checked)} />
         click me
