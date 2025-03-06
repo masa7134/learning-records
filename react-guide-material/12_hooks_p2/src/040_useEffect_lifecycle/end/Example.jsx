@@ -13,7 +13,7 @@ const Example = () => {
         console.log("update cleanup");
       };
     },
-    [state]
+    [state]// 依存配列の値が元と同じならなにも実行されず、元の値と違うときはクリーンナップ→コールバックの順に実行される。
   );
 
   useEffect(() => {
@@ -22,9 +22,9 @@ const Example = () => {
     return () => {
       console.log("mount cleanup");
     };
-  }, []);
+  }, []);// 依存配列が空のときはUpdatedによるコールバック関数とクリーンナップ関数は実行されず、コンポーネントがアンマウント（消滅）したときにクリーンナップ関数が実行される。
 
-  console.log("render");
+  console.log("render");// まず最初に実行
   
   return (
     <>
