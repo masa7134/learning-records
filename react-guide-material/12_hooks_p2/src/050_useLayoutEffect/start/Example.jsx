@@ -1,4 +1,7 @@
-import { useEffect, useState } from "react";
+import { useEffect, useLayoutEffect, useState } from "react";
+import Random from "./Random";
+
+// useLayoutEffect
 const Example = () => {
   const [isDisp, setIsDisp] = useState(true);
 
@@ -12,7 +15,7 @@ const Example = () => {
 const Timer = () => {
   const [time, setTime] = useState(0);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     // console.log('init');
     let intervalId = null;
     intervalId = window.setInterval(() => {
@@ -36,11 +39,21 @@ const Timer = () => {
     }
   }, [time]);
 
+  useLayoutEffect(() => {
+    const _time = parseInt(window.localStorage.setItem('time-key', time));
+    if(!isNaN(_time)){
+      setTime(_time);
+    }
+  }, [])
+
   return (
-    <h3>
-      <time>{time}</time>
-      <span>秒経過</span>
-    </h3>
+    <>
+      <h3>
+        <time>{time}</time>
+        <span>秒経過</span>
+      </h3>
+      <Random />
+    </>
     );
 };
 
