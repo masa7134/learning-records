@@ -1,5 +1,15 @@
 import { useEffect, useState, useLayoutEffect } from "react";
 
+// 機能的な観点
+// コンポーネントマウント時、更新時のみ呼び出したい。
+
+// 純粋関数の観点
+// コンソールへのログ出力
+// DOM操作(50行目、関数の外側に影響を及ぼすのでuseEffect内に記述するf)
+// サーバーとの通信
+// タイマー処理
+// ランダムな値の生成
+
 const Example = () => {
   const [isDisp, setIsDisp] = useState(true);
 
