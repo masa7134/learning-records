@@ -1,28 +1,22 @@
-const initialState = 0;
+// reducerを定義するためのimport
+import { createSlice } from "@reduxjs/toolkit";
 
-const reducer = (state = initialState, { type, payload }) => {
-  switch (type) {
-    case "counter/+":
+const counter = createSlice({
+  name: 'counter',// nameプロパティにcounterと名前をつける
+  initialState: 0,// 初期値の設定
+  reducers: {// stateを変更するためのメソッドを定義していく
+    add(state, { type, payload }) {
+      console.log(type, payload)
       return state + payload;
-    case "counter/-":
+    },
+    minus(state, { type, payload }) {
+      console.log(type, payload)
       return state - payload;
-    default:
-      return state;
+    }
   }
-};
+})
 
-const add = (payload) => {
-    return {
-        type: "counter/+",
-        payload
-    }
-}
+const { add, minus } = counter.actions;
 
-const minus = (payload) => {
-    return {
-        type: "counter/-",
-        payload
-    }
-}
-
-export { reducer, add, minus }
+export { add, minus }
+export default counter.reducer;
